@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "ojako/custom-dlblock",
+	"version": "0.1.0",
+	"title": "Ojako Custom DLBlock",
+	"category": "text",
+	"icon": "editor-alignleft",
+	"description": "おジャコ仕様の定義リスト,FAQなどにも対応しています",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"isEditMode": {
+			"type": "boolean",
+			"default": true
+		},
+		"themeColor": {
+			"type": "string",
+			"default": "#e1f5fe"
+		},
+		"headTitleColor": {
+			"type": "string",
+			"default": "#0b048f"
+		},
+		"dlTitle": {
+			"type": "string",
+			"default": "",
+			"selector": "h1"
+		},
+		"isFaq": {
+			"type": "boolean",
+			"default": false
+		},
+		"isQaBalloon": {
+			"type": "boolean",
+			"default": false
+		},
+		"isPanelOpen": {
+			"type": "boolean",
+			"default": true
+		},
+		"iconDesign": {
+			"type": "string",
+			"default": "sinple"
+		}
+	},
+	"textdomain": "custom-dlblock",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

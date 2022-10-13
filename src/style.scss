@@ -1,0 +1,270 @@
+@charset "utf-8";
+.wp-block-ojako-custom-dlblock {
+  dl {
+    overflow: hidden;
+    font-size: 14px;
+    font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    dt {
+      padding: 10px 20px;
+      box-sizing: border-box;
+      background-color: #f1f1f1;
+      font-weight: 600;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+    dd {
+      margin-left: 0em;
+      padding: 15px 20px;
+      background-color: #fff;
+      box-sizing: border-box;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+} //.wp-block-ojako-custom-dlblock
+
+
+.oja_dl_wrap *, .oja_dl_wrap *:after, .oja_dl_wrap *:before {
+  font-family: "游ゴシック","Yu Gothic","游ゴシック体","YuGothic","Hiragino Kaku Gothic ProN","Meiryo","sans-serif";
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.oja_dl_wrap {
+	margin: 0 0 2em 10px;
+	padding: 1em 1em 0.5em 1em;
+	background: #e1f5fe;
+  h1.oja-dl-head {
+    font-size: 1.5em;
+    position: relative;
+    margin-right: 2em;
+    margin-left: -26px;
+    padding: 0.3em;
+    padding-left: 3%;
+    color: #ffffff;
+    background-color: #0b048f;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%);
+    margin-bottom: 3%;
+    margin-top: 1%;
+    @media screen and (max-width: 543px) {
+      font-size: 1.3em;
+      margin-left: -20px;
+    }
+    &::after {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      content: '';
+      border-width: 0 10px 10px 0;
+      border-style: solid;
+      border-color: transparent #1976d2 transparent transparent;
+    }
+  }
+
+  /* 質問形式CSS */
+  .faq {
+    dt, dd {
+      margin-left: 0;
+      padding: 0.7em;
+      padding-left: 3em;
+      background: #fff;
+    }
+    dt::before,dd::before{
+      font-size: 1.5em;
+      padding: 0.2em 0.4em;
+    }
+    dt {
+      margin-bottom: 0.5em;
+      &::before {
+        margin-left: -2em;
+        content: 'Q';
+        color: #f55e5e;
+      }
+    }
+    dd {
+      margin-bottom: 2em;
+      &::before {
+        margin-left: -2em;
+        content: 'A';
+        color: #1bb4d4;
+      }
+    }
+  }
+
+  // 点線デザイン
+  .faq.border {
+    border: 2px dashed rgb(132 61 62 / 42%);
+    background: #f9f95c;
+    padding-left: 10px;
+    dt, dd {
+      padding-left: 3.5em;
+      padding-top: 1em;
+      background: #f9f95c;
+    }
+    dt::before,dd::before{
+      border: 2px dashed rgb(132 61 62 / 42%);
+      margin-right: 0.5em;
+    }
+  }
+
+  // 白黒スタイル
+  .faq.blackwhite {
+    background: #fff;
+    border: 1px solid #000;
+    dt, dd {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    dt::before,dd::before{
+      margin-right: 0.5em;
+    }
+    dt {
+      &:before {
+        background: #000;
+        color: #fff;
+        border-radius: 4px;
+      }
+    }
+    dd:before {
+      color: #000;
+    }
+  }
+
+  // モダンスタイル
+  .faq.modan {
+    dt {
+      padding: 0.2em 0.5em 0em 2em;
+      border-radius: 0.2em;
+      background: #00bcd4;
+      &::before {
+        margin: 0.3em 0.3em 0 -1.3em;
+        content: 'Q';
+      }
+    }
+    dd {
+      background: transparent;
+      &::before {
+        margin: 0 0.5em 0 -2em;
+        content: 'A';
+        border-radius: 4px;
+        background: #8006d9;
+      }
+    }
+    /* QAアイコン */
+    dt::before,dd::before{
+      color: #ffffff;
+    }
+  } //.faq
+
+  /* 吹き出しCSS */
+  .qaBalloon {
+    dt, dd {
+      position: relative;
+      padding: 1em;
+      padding-bottom: 0.7em;
+      box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+      border-radius: 0.3em;
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        z-index: 99;
+        top: 0.5em;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        content: '';
+        border-style: solid;
+        margin: 0;
+        padding: 0;
+        background: none;
+        font-size: 1.2em;
+      }
+      &::after {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 1.2em;
+        position: absolute;
+        top: 0;
+        color: #ffffff;
+        border-radius: 50%;
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.2em;
+      }
+    }
+    dt {
+      margin: 0 5em 1em 3em;
+      background: #ffe0b2;
+      &::before {
+        left: -0.5em;
+        border-width: 5px 8.7px 5px 0;
+        border-color: transparent #ffe0b2 transparent transparent;
+      }
+      &::after {
+        left: -2.5em;
+        margin: 0 0.5em 0 0;
+        padding: 0.2em 0.45em;
+        content: '\f128';
+        background: #f57c00;
+      }
+    }
+    dd {
+      margin: 0 3em 3em 5em;
+      background: #b2ebf2;
+      &::before {
+        right: -0.5em;
+        border-width: 5px 0 5px 8.7px;
+        border-color: transparent transparent transparent #b2ebf2;
+      }
+      &::after {
+        right: -2.5em;
+        margin: 0 0 0 0.5em;
+        padding: 0.2em 0.6em;
+        content: '\f12a';
+        background: #0097a7;
+      }
+    }
+  } //.qaBalloon
+
+  /* アコーディオンのコンテンツ */
+  .panelOpen {
+    .accordion__title {
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 2px;
+      padding-right: 3.5em;
+      word-break: break-all;
+      &:hover::after {
+        color: rgb(68, 80, 82);
+      }
+      &:after {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: '\f067';
+        position: absolute;
+        top: 15%;
+        right: 3%;
+        font-size: 20px;
+        color: #ccc;
+        transition:  .3s;
+      }
+      &.is-active::after {
+        content: '\f00d';
+      }
+    }
+    .accordion__content {
+      display: none;
+      cursor: pointer;
+    }
+    .accordion__content.is-open {
+      display: block;
+    }
+  } //.panelOpen
+
+} //.oja_dl_wrap

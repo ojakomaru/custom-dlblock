@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+.oja_dl_wrap h1.oja-dl-head {
+  font-size: 15px;
+  line-height: 2;
+}
+dl.wp-block-ojako-custom-dlblock {
+  .block-editor-block-list__block {
+    margin: 0;
+  }
+  overflow: hidden;
+  font-size: 14px;
+  margin-top: 0%;
+  margin-bottom: 0;
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  dt {
+    padding: 15px 20px;
+    box-sizing: border-box;
+    background-color: #f1f1f1;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  dd {
+    margin-left: 0em;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+
+//インスペクターラジオボタンスタイル
+.oja-fap-icon {
+  width: 100%;
+  .components-base-control__field {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .components-base-control__label {
+    flex-basis: 100%;
+  }
+
+  .components-radio-control__option {
+    flex-basis: 50%;
+    margin-bottom: 10%;
+
+    input {
+      display: none;
+    }
+
+    input[type="radio"]:checked + label {
+      border: solid 3px #e1edb1;
+    }
+
+    label {
+      display: block;
+      cursor: pointer;
+      width: 100%;
+      margin: 0;
+      padding: 45px 0px 10px;
+      color: #555e64;
+      text-align: center;
+      border: solid 1px #ccc;
+      border-radius: 10%;
+      font-size: 10px;
+      position: relative;
+      &:hover {
+        background: #fafafa;
+        border-color: #999;
+        box-shadow: inset 0 -1px 0 #999;
+        color: #23282d;
+      }
+      &:before {
+        content: "Q";
+        display: block;
+        font-size: 22px;
+        position: absolute;
+        transform: translate(-50%, -70%);
+        left: 50%;
+        top: 50%;
+      }
+    }
+    input[value="sinple"] + label:before {
+      color: #f55e5e;
+      padding: 5px;
+    }
+    input[value="border"] + label {
+      background: #f5d25b;
+      &:before {
+        border: 2px dashed rgb(132 61 62 / 42%);
+        padding: 5px;
+      }
+    }
+
+    input[value="blackwhite"] + label:before {
+      border: 1px solid #333;
+      border-radius: 4px;
+      background: #333;
+      color: #fff;
+      padding: 5px;
+    }
+    input[value="modan"] + label {
+      background: #e1f5fe;
+      &:before {
+        border-radius: 4px;
+        background: #00bcd4;
+        color: #fff;
+        padding: 5px;
+      }
+    }
+  }
+} //.oja-fap-icon
+
+.ojaColorPicker {
+  position: relative;
+  p {
+    border-top: 1px solid;
+    font-weight: 600;
+    margin-top: 10px;
+    padding-top: 2px;
+  }
+  .components-spacer {
+    display: none;
+  }
+  .components-flex-item {
+    position: relative;
+    &:after {
+      content: 'コピー';
+      padding-left: 10px;
+      font-size: 12px;
+    }
+  }
+  button {
+    cursor: pointer;
+    display: inline;
+    padding: 8px 3px;
+    font-size: 12px;
+    border-radius: 20px;
+    border: 1px solid;
+    margin-left: 10px;
+  }
+  .copyedColor {
+    width: 60px;
+    height: 25px;
+    display: inline-block;
+    margin-left: 20px;
+    border-radius: 5px;
+  }
+}
+
