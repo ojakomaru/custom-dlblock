@@ -49,7 +49,7 @@ export default {
 		},
 		isPanelOpen: {
 			type: "boolean",
-			default: true,
+			default: false,
 		},
 		iconDesign: {
 			type: "string",

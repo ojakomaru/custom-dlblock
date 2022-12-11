@@ -35,8 +35,9 @@ dl.wp-block-ojako-custom-dlblock {
 //インスペクターラジオボタンスタイル
 .oja-fap-icon {
   width: 100%;
-  .components-base-control__field {
-    display: flex;
+  div[data-wp-component="VStack"] {
+    flex-direction: row;
+    gap: 0;
     flex-wrap: wrap;
   }
   .components-base-control__label {
