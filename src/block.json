@@ -43,6 +43,18 @@
 		"iconDesign": {
 			"type": "string",
 			"default": "sinple"
+		},
+		"dtText": {
+			"type": "string",
+			"default": "",
+			"source": "text",
+			"selector": "dt.accordion__title"
+		},
+		"ddText": {
+			"type": "string",
+			"default": "",
+			"source": "text",
+			"selector": "dd.accordion__content"
 		}
 	},
 	"textdomain": "custom-dlblock",

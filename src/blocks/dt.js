@@ -1,4 +1,4 @@
-const { RichText } = wp.editor;
+import { RichText, useBlockProps} from '@wordpress/block-editor';
 export default {
 	name: "custom-block/dt",
 	title: "質問（definition term）",
@@ -13,18 +13,24 @@ export default {
 			selector: "dt.accordion__title",
 		},
 	},
-	edit({ attributes, setAttributes, className }) {
+	edit({ attributes, setAttributes }) {
+    const blockProps = useBlockProps({
+			className: "accordion__title",
+			tagName: "dt",
+			value: attributes.dtText,
+			onChange: (content) => setAttributes({ dtText: content }),
+		});
 		return (
-			<RichText
-				className={className}
-				tagName="dt"
-				value={attributes.dtText}
-				onChange={(content) => setAttributes({ dtText: content })}
-			/>
+			<RichText {...blockProps}	/>
 		);
 	},
 
 	save({ attributes }) {
-		return <dt className="accordion__title">{attributes.dtText}</dt>;
+    const blockProps = useBlockProps.save({
+			className: "accordion__title",
+			tagName: "dt",
+			value: attributes.dtText,
+		});
+		return <RichText.Content {...blockProps} />
 	},
 };

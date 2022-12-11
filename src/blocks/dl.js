@@ -1,10 +1,7 @@
 import { dispatch, withSelect } from "@wordpress/data";
 import { createBlock } from "@wordpress/blocks";
-import { InnerBlocks} from "@wordpress/block-editor";
-import {
-	TextControl,
-	Button,
-} from "@wordpress/components";
+import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
+import { Button, TextControl } from "@wordpress/components";
 import { Fragment } from "@wordpress/element";
 import { GetViewMode } from "../components/GetViewMode";
 import { getPreview } from "../components/getPreview";
@@ -19,7 +16,7 @@ export default {
 	description: "「質問〜回答」 や 「名称〜説明」 などの定義リストを追加します",
 	icon: "editor-alignleft",
 	category: "common",
-	keywords: ["dl", "oja", "list"],
+	keywords: ["dl", "dllist", "ojadl", "oja", "list"],
 	supports: {
 		customClassName: false,
 		anchor: false,
@@ -67,7 +64,7 @@ export default {
 		};
 	})((props) => {
 		const { attributes, className, setAttributes, clientId } = props;
-
+    const blockProps = useBlockProps({ className: "oja_dl_wrap" });
 		// 許可されるブロックを登録
 		const allowedBlocks = ["custom-block/dt", "custom-block/dd"];
     const blockTemplate = allowedBlocks.map((block) => [block, {}]);
@@ -80,9 +77,9 @@ export default {
 				/>
 				<OjaInspector attributes={attributes} setAttributes={setAttributes} />
 				{attributes.isEditMode && (
-					<div className="oja_dl_wrap">
+					<div {...blockProps}>
 						<TextControl
-							label="リストのタイトル"
+							label="リストのタイトル(タイトルがない場合は表示されません)"
 							value={attributes.dlTitle}
 							onChange={(newText) => setAttributes({ dlTitle: newText })}
 						/>
@@ -114,7 +111,7 @@ export default {
 				{!attributes.isEditMode && [
 					<Button
 						onClick={() => setAttributes({ isEditMode: true })}
-						isLink
+						Link
 						icon="edit"
 					>
 						編集モード
@@ -127,11 +124,12 @@ export default {
 
 	// Seveメソッド
 	save({ className, attributes }) {
+    const blockProps = useBlockProps.save({
+      className: "oja_dl_wrap",
+      style: { backgroundColor: attributes.themeColor || null }
+    });
 		return (
-			<div
-				className="oja_dl_wrap"
-				style={{ backgroundColor: attributes.themeColor }}
-			>
+			<div {...blockProps}>
 				{attributes.dlTitle ? (
 					<h1
 						className="oja-dl-head"
